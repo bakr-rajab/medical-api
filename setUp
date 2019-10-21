@@ -1,0 +1,10 @@
+composer require laravel/passport
+php artisan make:auth
+php artisan passport:install
+php artisan migrate
+
+user Laravel\Passport\HasApiTokens at App\User
+
+app/AuthServiceProvider
+
+php artisan make:controller Api/AuthController
