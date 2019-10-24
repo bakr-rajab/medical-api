@@ -32,4 +32,6 @@ Route::group(['middleware' => ['json.response']], function () {
         Route::get('/logout', 'Api\AuthController@logout')->name('logout');
     });
 
+
+
 });
