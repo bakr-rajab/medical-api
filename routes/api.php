@@ -1,6 +1,9 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +19,11 @@ use Illuminate\Http\Request;
 //Route::middleware('auth:api')->get('/user', function (Request $request) {
 //    return $request->user();
 //});
+Route::get('/test', function () {
+    return new App\Http\Resources\UserCollection(App\Models\User::all());
+});
+Route::resource('users','Api\UserController');
+Route::resource('doctors','Api\DoctorController');
 
 Route::group(['middleware' => ['json.response']], function () {
 
